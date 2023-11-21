@@ -1,10 +1,13 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const quizScheema = new mongoose.Schema({
-  title: String,
-  message: String
+  question: String,
+  options: {
+    type: [String],
+    required: true,
+  },
+  correctOptionIndex: Number,
 });
 
-
-const Message = mongoose.model('message', quizScheema);
-module.exports = Message
+const QuizQuestion = mongoose.model("quizes", quizScheema);
+module.exports = QuizQuestion;
