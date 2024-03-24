@@ -15,10 +15,12 @@ app.use(cors());
 const connectToDatabase = require("./config/connection");
 connectToDatabase();
 
-// app.get("/", (req, res) => {
-//     res.send("all ok")
-//     console.log("server working fine");
-// })
+
+//Testing
+app.get("/" , (req, res) => {
+  res.send (`Hello from ${process.env.PORT}`)
+})
+app.get("/all-questions", questionControllers.getAllQuestions)
 app.post("/new-question", questionControllers.newQuestion)
 
 app.listen(process.env.PORT, () => {
