@@ -16,12 +16,10 @@ const connectToDatabase = require("./config/connection");
 connectToDatabase();
 
 
-//Testing
-app.get("/" , (req, res) => {
-  res.send (`Hello from ${process.env.PORT}`)
-})
 app.get("/all-questions", questionControllers.getAllQuestions)
 app.post("/new-question", questionControllers.newQuestion)
+app.post("/new-question/oop", questionControllers.newOOPQuestion)
+app.post("/new-question/dsa", questionControllers.newDSAQuestion)
 
 app.listen(process.env.PORT, () => {
   console.log(`server running at PORT ${process.env.PORT}`);
