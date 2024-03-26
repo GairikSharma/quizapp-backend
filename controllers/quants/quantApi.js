@@ -5,14 +5,15 @@ const createQANTQuestion = async (req, res) => {
   //get the sent in data off req body
   const question = req.body.question;
   const options = req.body.options;
+  const correctOption = req.body.correctOption;
   const point = req.body.point;
-  const correctOption = req.body.correctOptionIndex;
+
   //create a question with it
   const qs = await quantQuestion.create({
     question: question,
     options: options,
+    correctOption: correctOption,
     point: point,
-    correctOptionIndex: correctOption,
   });
   //respond with new question
   res.json({ quants: qs });

@@ -6,8 +6,8 @@ const qunatScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const verbalScheema = new mongoose.Schema({
@@ -16,8 +16,8 @@ const verbalScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const oopScheema = new mongoose.Schema({
@@ -26,8 +26,8 @@ const oopScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const dsaScheema = new mongoose.Schema({
@@ -36,8 +36,8 @@ const dsaScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const dbmsScheema = new mongoose.Schema({
@@ -46,8 +46,8 @@ const dbmsScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const cnScheema = new mongoose.Schema({
@@ -56,8 +56,8 @@ const cnScheema = new mongoose.Schema({
     type: [String],
     required: true,
   },
+  correctOption: String,
   point: Number,
-  correctOptionIndex: Number,
 });
 
 const quantQuestion = mongoose.model("quanttitative_aptitude", qunatScheema);
