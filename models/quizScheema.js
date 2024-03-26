@@ -1,6 +1,16 @@
 const mongoose = require("mongoose");
 
-const quizScheema = new mongoose.Schema({
+const qunatScheema = new mongoose.Schema({
+  question: String,
+  options: {
+    type: [String],
+    required: true,
+  },
+  point: Number,
+  correctOptionIndex: Number,
+});
+
+const verbalScheema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -17,23 +27,51 @@ const oopScheema = new mongoose.Schema({
     required: true,
   },
   point: Number,
-  CorrectOptionIndex: Number,
+  correctOptionIndex: Number,
 });
 
-
 const dsaScheema = new mongoose.Schema({
-  dsa_question: String,
-  dsa_options: {
+  question: String,
+  options: {
     type: [String],
     required: true,
   },
-  dsa_point: Number,
-  dsa_CorrectOptionIndex: Number,
+  point: Number,
+  correctOptionIndex: Number,
 });
 
+const dbmsScheema = new mongoose.Schema({
+  question: String,
+  options: {
+    type: [String],
+    required: true,
+  },
+  point: Number,
+  correctOptionIndex: Number,
+});
 
-const QuizQuestion = mongoose.model("quizes", quizScheema);
-const oopQuizQuestion = mongoose.model("oop", oopScheema);
-const dsaQuizQuestion = mongoose.model("dsa", dsaScheema);
+const cnScheema = new mongoose.Schema({
+  question: String,
+  options: {
+    type: [String],
+    required: true,
+  },
+  point: Number,
+  correctOptionIndex: Number,
+});
 
-module.exports = dsaQuizQuestion;
+const quantQuestion = mongoose.model("quanttitative_aptitude", qunatScheema);
+const verbalQuestion = mongoose.model("verbal", verbalScheema);
+const oopQuestion = mongoose.model("oop", oopScheema);
+const dsaQuestion = mongoose.model("dsa", dsaScheema);
+const dbmsQuestion = mongoose.model("dbms", dbmsScheema);
+const cnQuestion = mongoose.model("computer_networks", cnScheema);
+
+module.exports = {
+  quantQuestion,
+  verbalQuestion,
+  oopQuestion,
+  dsaQuestion,
+  dbmsQuestion,
+  cnQuestion,
+};
