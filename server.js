@@ -26,20 +26,20 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
-app.get(
-  "/all-questions-quantitative-aptitude",
-  quantQuestionController.all_quant_qs
-);
-app.get("/all-questions-verbal", verbalQuestionController.all_verbal_qs);
-app.get("/all-questions-computer-networks", cnQuestionController.all_cn_qs);
-app.get("/all-questions-dbms", dbmsQuestionController.all_dbms_qs);
-app.get("/all-questions-dsa", dsaQuestionController.all_dsa_qs);
-app.get("/all-questions-oop", oopQuestionController.all_oop_qs);
+// app.get(
+//   "/all-questions-quantitative-aptitude",
+//   quantQuestionController.all_quant_qs
+// );
+// app.get("/all-questions-verbal", verbalQuestionController.all_verbal_qs);
+// app.get("/all-questions-computer-networks", cnQuestionController.all_cn_qs);
+// app.get("/all-questions-dbms", dbmsQuestionController.all_dbms_qs);
+// app.get("/all-questions-dsa", dsaQuestionController.all_dsa_qs);
+// app.get("/all-questions-oop", oopQuestionController.all_oop_qs);
 
 // "/all-questions?topic=oop"
 // "all-questions/:topic"
 
-app.post("/new-question/:topic", questionControllers.newQuestion);
+// app.post("/new-question/:topic", questionControllers.newQuestion);
 
 // app.post(
 //   "/new-question/quantitative-aptitude",
