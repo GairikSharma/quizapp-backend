@@ -3,11 +3,10 @@ const { dsaQuestion } = require("../../models/quizScheema");
 //creating new dsa question
 const createDSAQuestion = async (req, res) => {
   //get the sent in data off req body
-  const {question, options, correctOption, point} = req.body
-  // const question = req.body.question;
-  // const options = req.body.options;
-  // const correctOption = req.body.correctOption;
-  // const point = req.body.point;
+  const question = req.body.question;
+  const options = req.body.options;
+  const correctOption = req.body.correctOption;
+  const point = req.body.point;
 
   //create a question with it
   const qs = await dsaQuestion.create({
