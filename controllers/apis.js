@@ -19,20 +19,6 @@ const createQuestion = async (req, res) => {
   const topic = req.params["topic"];
 
   await createQuestionByTopic[topic](req, res);
-
-  //get the sent in data off req body
-  // const question = req.body.question;
-  // const options = req.body.options;
-  // const point = req.body.point;
-  // const correctOption = req.body.correctOptionIndex;
-  // //create a question with it
-  // const newQuestion = await QuizQuestion.create({
-  //   question: question,
-  //   options: options,
-  //   point: point,
-  //   correctOptionIndex: correctOption,
-  // });
-  // //respond with new question
   // res.json({ quizes: newQuestion });
 };
 
