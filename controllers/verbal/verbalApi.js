@@ -1,4 +1,4 @@
-const { verbalQuestion } = require("../../models/quizScheema");
+const { verbalQuestion } = require("../../models/quizSchema");
 
 //creating new verbal question
 const createVERBALQuestion = async (req, res) => {

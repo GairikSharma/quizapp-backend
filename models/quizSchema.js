@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const qunatScheema = new mongoose.Schema({
+const qunatSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -11,7 +11,7 @@ const qunatScheema = new mongoose.Schema({
   point: Number,
 });
 
-const verbalScheema = new mongoose.Schema({
+const verbalSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -22,7 +22,7 @@ const verbalScheema = new mongoose.Schema({
   point: Number,
 });
 
-const oopScheema = new mongoose.Schema({
+const oopSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -33,7 +33,7 @@ const oopScheema = new mongoose.Schema({
   point: Number,
 });
 
-const dsaScheema = new mongoose.Schema({
+const dsaSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -44,7 +44,7 @@ const dsaScheema = new mongoose.Schema({
   point: Number,
 });
 
-const dbmsScheema = new mongoose.Schema({
+const dbmsSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -55,7 +55,7 @@ const dbmsScheema = new mongoose.Schema({
   point: Number,
 });
 
-const cnScheema = new mongoose.Schema({
+const cnSchema = new mongoose.Schema({
   question: String,
   options: {
     type: [String],
@@ -66,12 +66,12 @@ const cnScheema = new mongoose.Schema({
   point: Number,
 });
 
-const quantQuestion = mongoose.model("quanttitative_aptitude", qunatScheema);
-const verbalQuestion = mongoose.model("verbal", verbalScheema);
-const oopQuestion = mongoose.model("oop", oopScheema);
-const dsaQuestion = mongoose.model("dsa", dsaScheema);
-const dbmsQuestion = mongoose.model("dbms", dbmsScheema);
-const cnQuestion = mongoose.model("computer_networks", cnScheema);
+const quantQuestion = mongoose.model("quanttitative_aptitude", qunatSchema);
+const verbalQuestion = mongoose.model("verbal", verbalSchema);
+const oopQuestion = mongoose.model("oop", oopSchema);
+const dsaQuestion = mongoose.model("dsa", dsaSchema);
+const dbmsQuestion = mongoose.model("dbms", dbmsSchema);
+const cnQuestion = mongoose.model("computer_networks", cnSchema);
 
 module.exports = {
   quantQuestion,

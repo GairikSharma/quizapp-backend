@@ -1,4 +1,4 @@
-const { quantQuestion } = require("../../models/quizScheema");
+const { quantQuestion } = require("../../models/quizSchema");
 
 //creating a quant question
 const createQANTQuestion = async (req, res) => {

@@ -1,4 +1,4 @@
-const { dbmsQuestion } = require("../../models/quizScheema");
+const { dbmsQuestion } = require("../../models/quizSchema");
 
 //creating new dbms question
 const createDBMSQuestion = async (req, res) => {

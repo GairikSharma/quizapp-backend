@@ -1,4 +1,4 @@
-const { oopQuestion } = require("../../models/quizScheema");
+const { oopQuestion } = require("../../models/quizSchema");
 
 //creating new oop question
 const createOOPQuestion = async (req, res) => {

@@ -1,4 +1,4 @@
-const { cnQuestion } = require("../../models/quizScheema");
+const { cnQuestion } = require("../../models/quizSchema");
 
 //creating new cn question
 const createDBMSQuestion = async (req, res) => {

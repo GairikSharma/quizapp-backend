@@ -1,4 +1,4 @@
-const { dsaQuestion } = require("../../models/quizScheema");
+const { dsaQuestion } = require("../../models/quizSchema");
 
 //creating new dsa question
 const createDSAQuestion = async (req, res) => {
