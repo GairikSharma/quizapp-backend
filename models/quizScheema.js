@@ -7,6 +7,7 @@ const qunatScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
@@ -17,6 +18,7 @@ const verbalScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
@@ -27,6 +29,7 @@ const oopScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
@@ -37,6 +40,7 @@ const dsaScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
@@ -47,6 +51,7 @@ const dbmsScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
@@ -57,6 +62,7 @@ const cnScheema = new mongoose.Schema({
     required: true,
   },
   correctOption: String,
+  explaination: String,
   point: Number,
 });
 
