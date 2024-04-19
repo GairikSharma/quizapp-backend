@@ -24,6 +24,9 @@ const verbalSchema = new mongoose.Schema({
 
 const oopSchema = new mongoose.Schema({
   question: String,
+  code: {
+    type: String,
+  },
   options: {
     type: [String],
     required: true,
@@ -35,6 +38,9 @@ const oopSchema = new mongoose.Schema({
 
 const dsaSchema = new mongoose.Schema({
   question: String,
+  code: {
+    type: String,
+  },
   options: {
     type: [String],
     required: true,
