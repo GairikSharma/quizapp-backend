@@ -3,7 +3,8 @@ const { dbmsQuestion } = require("../../models/quizSchema");
 //creating new dbms question
 const createDBMSQuestion = async (req, res) => {
   //get the sent in data off req body
-  const {question, options, correctOption, explaination, point} = req.body;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
 
   //create a question with it
   const qs = await dbmsQuestion.create({
@@ -11,7 +12,8 @@ const createDBMSQuestion = async (req, res) => {
     options: options,
     correctOption: correctOption,
     explaination: explaination,
-    point: point
+    point: point,
+    level: level,
   });
   //respond with new question
   res.json({ dbms: qs });

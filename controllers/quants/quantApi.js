@@ -4,7 +4,8 @@ const { quantQuestion } = require("../../models/quizSchema");
 const createQANTQuestion = async (req, res) => {
   //get the sent in data off req body
 
-  const { question, options, correctOption, explaination, point } = req.body;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
 
   //create a question with it
   const qs = await quantQuestion.create({
@@ -13,6 +14,7 @@ const createQANTQuestion = async (req, res) => {
     correctOption: correctOption,
     explaination: explaination,
     point: point,
+    level: level,
   });
   //respond with new question
   res.json({ quants: qs });

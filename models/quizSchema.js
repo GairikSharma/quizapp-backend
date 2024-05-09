@@ -9,6 +9,7 @@ const qunatSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const verbalSchema = new mongoose.Schema({
@@ -20,6 +21,7 @@ const verbalSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const oopSchema = new mongoose.Schema({
@@ -34,6 +36,7 @@ const oopSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const dsaSchema = new mongoose.Schema({
@@ -48,6 +51,7 @@ const dsaSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const dbmsSchema = new mongoose.Schema({
@@ -59,6 +63,7 @@ const dbmsSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const cnSchema = new mongoose.Schema({
@@ -70,6 +75,7 @@ const cnSchema = new mongoose.Schema({
   correctOption: String,
   explaination: String,
   point: Number,
+  level: String
 });
 
 const quantQuestion = mongoose.model("quanttitative_aptitude", qunatSchema);

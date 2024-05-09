@@ -3,7 +3,8 @@ const { verbalQuestion } = require("../../models/quizSchema");
 //creating new verbal question
 const createVERBALQuestion = async (req, res) => {
   //get the sent in data off req body
-  const {question, options, correctOption, explaination, point} = req.body;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
 
   //create a question with it
   const qs = await verbalQuestion.create({
@@ -12,6 +13,7 @@ const createVERBALQuestion = async (req, res) => {
     correctOption: correctOption,
     explaination: explaination,
     point: point,
+    level: level,
   });
   //respond with new question
   res.json({ verbal: qs });

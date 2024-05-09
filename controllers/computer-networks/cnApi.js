@@ -3,15 +3,17 @@ const { cnQuestion } = require("../../models/quizSchema");
 //creating new cn question
 const createDBMSQuestion = async (req, res) => {
   //get the sent in data off req body
-  const {question, options, correctOption, explaination, point} = req.body;
-  
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
+
   //create a question with it
   const qs = await cnQuestion.create({
     question: question,
     options: options,
     correctOption: correctOption,
     point: point,
-    explaination: explaination
+    explaination: explaination,
+    level: level,
   });
   //respond with new question
   res.json({ cn: qs });

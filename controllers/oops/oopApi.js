@@ -3,7 +3,7 @@ const { oopQuestion } = require("../../models/quizSchema");
 //creating new oop question
 const createOOPQuestion = async (req, res) => {
   //get the sent in data off req body
-  const {question, code, options, correctOption, explaination, point} = req.body;
+  const {question, code, options, correctOption, explaination, point, level} = req.body;
 
   //create a question with it
   const qs = await oopQuestion.create({
@@ -13,6 +13,7 @@ const createOOPQuestion = async (req, res) => {
     correctOption: correctOption,
     explaination: explaination,
     point: point,
+    level: level
   });
   //respond with new question
   res.json({ oop: qs });
