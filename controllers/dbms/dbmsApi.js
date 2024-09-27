@@ -27,7 +27,37 @@ const getDBMSQuestion = async (req, res) => {
   res.json({ all_qs: allDBMSQuestions });
 };
 
+//Update questions
+const updateDBMSQuestion = async (req, res) => {
+  const { id } = req.params;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
+  try {
+    if (!id) {
+      return res.status(400).send("ID parameter is required");
+    }
+    const updatedQuestion = await dbmsQuestion.findByIdAndUpdate(
+      id,
+      {
+        question: question,
+        options: options,
+        correctOption: correctOption,
+        explaination: explaination,
+        point: point,
+        level: level,
+      },
+      { new: true }
+    );
+    if (!updatedQuestion) {
+      return res.status(404).send("Question not found");
+    }
+  } catch (error) {
+    res.status(500).send("Error updating question: " + error.message);
+  }
+};
+
 module.exports = {
   new_dbms_qs: createDBMSQuestion,
   all_dbms_qs: getDBMSQuestion,
+  update_dbms_qs: updateDBMSQuestion,
 };

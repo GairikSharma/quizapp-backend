@@ -27,4 +27,37 @@ const getCNQuestion = async (req, res) => {
   res.json({ all_qs: allCNQuestions });
 };
 
-module.exports = { new_cn_qs: createDBMSQuestion, all_cn_qs: getCNQuestion };
+//Update question
+const updateCNQuestion = async (req, res) => {
+  const { id } = req.params;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
+  try {
+    if (!id) {
+      return res.status(400).send("ID parameter is required");
+    }
+    const updatedQuestion = await quantQuestion.findByIdAndUpdate(
+      id,
+      {
+        question: question,
+        options: options,
+        correctOption: correctOption,
+        explaination: explaination,
+        point: point,
+        level: level,
+      },
+      { new: true }
+    );
+    if (!updatedQuestion) {
+      return res.status(404).send("Question not found");
+    }
+  } catch (error) {
+    res.status(500).send("Error updating question: " + error.message);
+  }
+};
+
+module.exports = {
+  new_cn_qs: createDBMSQuestion,
+  all_cn_qs: getCNQuestion,
+  update_cn_qs: updateCNQuestion,
+};

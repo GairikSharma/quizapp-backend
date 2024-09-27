@@ -78,6 +78,8 @@ const cnSchema = new mongoose.Schema({
   level: String
 });
 
+
+
 const quantQuestion = mongoose.model("quanttitative_aptitude", qunatSchema);
 const verbalQuestion = mongoose.model("verbal", verbalSchema);
 const oopQuestion = mongoose.model("oop", oopSchema);

@@ -28,7 +28,37 @@ const getQUANTQuestion = async (req, res) => {
   res.json({ all_qs: allQUANTQuestions });
 };
 
+//Updating questions
+const updateQuantQuestion = async (req, res) => {
+  const { id } = req.params;
+  const { question, options, correctOption, explaination, point, level } =
+    req.body;
+  try {
+    if (!id) {
+      return res.status(400).send("ID parameter is required");
+    }
+    const updatedQuestion = await quantQuestion.findByIdAndUpdate(
+      id,
+      {
+        question: question,
+        options: options,
+        correctOption: correctOption,
+        explaination: explaination,
+        point: point,
+        level: level,
+      },
+      { new: true }
+    );
+    if (!updatedQuestion) {
+      return res.status(404).send("Question not found");
+    }
+  } catch (error) {
+    res.status(500).send("Error updating question: " + error.message);
+  }
+};
+
 module.exports = {
   new_quant_qs: createQANTQuestion,
   all_quant_qs: getQUANTQuestion,
+  update_quant_question: updateQuantQuestion,
 };
